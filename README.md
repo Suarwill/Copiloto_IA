@@ -1,14 +1,6 @@
 # Copiloto_IA
 Proyecto de Copiloto conversacional con IA
 
-Este readme debe incluir:
-
-Instrucciones para levantar el entorno (docker-compose up)
-Arquitectura del sistema
-Justificación de elecciones técnicas
-Explicación del flujo conversacional
-Limitaciones actuales y mejoras futuras (roadmap)
-
 ## Funciones mínimas
 - [ ] Subida de hasta 5 PDFs.
 - [ ] Extracción, división y vectorización del contenido.
@@ -22,9 +14,22 @@ Limitaciones actuales y mejoras futuras (roadmap)
 - [ ] Clasificación por temas o mezcla de tópicos
 - [ ] Ciberseguridad: Proteccion de datos del usuario y del servidor.
 
+## Instrucciones para levantar el entorno
+                En desarrollo
+
+## Arquitectura del sistema
+                En desarrollo, se escribirá cuando este funcional
+
+## Explicacion de flujo conversacional
+                En desarrollo, se escribirá cuando este funcional
+
+## Mejoras futuras
+En este extracto es como una serie de ideas para mejorar y escalar a futuro este desarrollo:
+-                 En desarrollo
+
 ## Tecnologias aplicadas 
             --------------> Justificadas
-            
+
 - Frameworks de orquestación: LangChain, LlamaIndex, CrewAI, etc.
 
 - LLMs: OpenAI, Claude, Mistral, Llama, HuggingFace, etc.
