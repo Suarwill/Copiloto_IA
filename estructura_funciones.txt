@@ -1,0 +1,23 @@
+Diagrama simple:
+
+Usuario     -> carga archivos       -> Frontend
+Frontend    -> filtra extensión PDF y máximo 5 archivos
+Frontend    -> envía archivos       -> Backend
+Backend     -> valida PDF y máximo 5 archivos
+Backend     -> sanitiza nombres / verifica tamaño
+Backend     -> extrae texto y divide en chunks -> genera embeddings
+Backend     -> guarda embeddings en vector store (por sesión/usuario)
+Backend     -> solicita resumen general -> IA
+IA          -> devuelve resumen     -> Backend
+Backend     -> devuelve resumen     -> Frontend
+Frontend    -> muestra resumen      -> Usuario
+Usuario     -> envía pregunta       -> Frontend
+Frontend    -> filtra XSS y sanitiza prompt
+Frontend    -> envía prompt         -> Backend
+Backend     -> securiza contra prompt injection
+Backend     -> busca contexto en vector store
+Backend     -> construye prompt con contexto
+Backend     -> envía a IA
+IA          -> devuelve respuesta   -> Backend
+Backend     -> devuelve respuesta   -> Frontend
+Frontend    -> muestra respuesta    -> Usuario
