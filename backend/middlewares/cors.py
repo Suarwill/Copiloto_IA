@@ -1,6 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 
-def addMiddlewareCors(app):
+def add_middleware_cors(app):
     app.addMiddleware(
         CORSMiddleware,
         allow_origins=["*"],  # Especificar las IP de origen permitidas.

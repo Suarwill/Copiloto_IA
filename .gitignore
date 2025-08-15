@@ -9,10 +9,6 @@ build/
 downloads/
 parts/
 sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
 .installed.cfg
 *.egg
 
@@ -37,3 +33,19 @@ cover/
 
 # Virtual environments
 venv/
+
+# .env
+*.env
+.venv
+env
+backend/.env
+
+# Models LLM, y cargas de archivos
+backend/models/*
+backend/uploads/*
+backend/data/*
+
+# Excepcion de Readme's
+!backend/models/README.md
+!backend/uploads/README.md
+!backend/data/README.md

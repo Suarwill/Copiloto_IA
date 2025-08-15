@@ -1,6 +1,6 @@
 from fastapi import HTTPException, status
 
-def secureFile(archivo):
+def secure_file(archivo):
     # 1) Segurizar que el archivo cargado sea un PDF
     if not archivo.filename.endswith(".pdf"):
         raise HTTPException(

@@ -1,8 +1,6 @@
 from fastapi import FastAPI
-from backend.middlewares.cors import addMiddlewareCors
-
-from backend.routes.upload import router as routerUpload
-from backend.routes.chat import router as routerChat
+from backend.middlewares import add_middleware_cors
+from backend.routes import router_upload, router_chat
 
 app = FastAPI(
     title="Copiloto Conversacional",
@@ -11,13 +9,13 @@ app = FastAPI(
 )
 
 # Middleware
-addMiddlewareCors(app)
+add_middleware_cors(app)
 
 # Rutas
-app.include_router(routerUpload, prefix="/upload", tags=["Carga de PDFs"])
-app.include_router(routerChat, prefix="/chat", tags=["Consultas"])
+app.include_router(router_upload, prefix="/upload", tags=["Carga de PDFs"])
+app.include_router(router_chat, prefix="/chat", tags=["Consultas"])
 
 # Ruta base
 @app.get("/")
-def readRoot():
+def read_raiz():
     return {"mensaje": "Bienvenido al Backend: API en FastAPI"}
