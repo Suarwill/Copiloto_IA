@@ -46,6 +46,6 @@ backend/uploads/*
 backend/data/*
 
 # Excepcion de Readme's
-!backend/models/README.md
-!backend/uploads/README.md
-!backend/data/README.md
+!backend/models/Readme.md
+!backend/uploads/Readme.md
+!backend/data/Readme.md

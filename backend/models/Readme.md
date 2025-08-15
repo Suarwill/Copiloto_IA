@@ -1,0 +1,1 @@
+# Esta carpeta guardará el LLM local que se trabajará
