@@ -3,7 +3,7 @@ from langchain_community.chat_models import ChatLlamaCpp
 
 from langchain_core.language_models.chat_models import BaseChatModel
 
-from backend.config import LLM_MODEL_PATH
+from config import LLM_MODEL_PATH
 
 def get_llm() -> BaseChatModel:
 

@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 import logging
 
-from backend.services.rag_service import query_rag
+from services.rag_service import query_rag
 
 router = APIRouter()
 

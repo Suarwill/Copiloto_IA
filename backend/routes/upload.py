@@ -4,9 +4,9 @@ from pathlib import Path
 import logging
 import shutil
 
-from backend.utils.secure_file import secure_file
-from backend.services.vector_store_service import procesar_guardar_pdf
-from backend.services.rag_service import generate_summary, generate_comparison
+from utils.secure_file import secure_file
+from services.vector_store_service import procesar_guardar_pdf
+from services.rag_service import generate_summary, generate_comparison
 
 router = APIRouter()
 

@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 
+# Backend
 WORKDIR /app
 
 # Instalar dependencias del sistema necesarias para compilar paquetes y descargar

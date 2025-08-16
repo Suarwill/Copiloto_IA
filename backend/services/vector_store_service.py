@@ -7,7 +7,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 
-from backend.config import (
+from config import (
     VECTOR_STORE_PATH,
     EMBEDDING_MODEL_NAME,
     EMBEDDING_DEVICE,

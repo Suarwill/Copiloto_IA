@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 
+#Frontend
 WORKDIR /app
 
 RUN apt-get update && apt-get upgrade -y && apt-get clean
@@ -12,4 +13,4 @@ COPY . .
 EXPOSE 8501
 
 # Iniciar Streamlit
-CMD ["streamlit", "run", "frontend.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

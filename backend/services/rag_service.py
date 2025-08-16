@@ -2,9 +2,9 @@ import logging
 from langchain.chains import RetrievalQA, LLMChain
 from langchain_core.prompts import PromptTemplate
 
-from backend.services.vector_store_service import get_vector_store
-from backend.services.llm_service import get_llm
-from backend.config import RETRIEVER_K
+from services.vector_store_service import get_vector_store
+from services.llm_service import get_llm
+from config import RETRIEVER_K
 
 # Configuración del logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
