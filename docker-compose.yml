@@ -1,25 +1,30 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  copilot_api:
-    # Construye la imagen a partir del Dockerfile en el directorio actual.
-    build: .
-    # Nombre del contenedor para fácil identificación.
-    container_name: copilot_api
-    # Reinicia el contenedor automáticamente si falla.
-    restart: unless-stopped
-    # Mapea el puerto 8000 del contenedor al puerto 8000 de la máquina host.
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "8000:8000"
-    # Monta volúmenes para persistir datos y permitir el desarrollo en vivo.
+      - "6060:6060"
     volumes:
-      # Sincroniza el código del backend para no tener que reconstruir en cada cambio.
-      - ./backend:/app/backend
-      # Persiste la base de datos vectorial de ChromaDB.
-      - ./data:/app/data
-      # Hace que los modelos LLM (archivos .gguf) estén disponibles dentro del contenedor.
-      - ./models:/app/models
-    # Comando para iniciar la aplicación FastAPI con Uvicorn.
-    # --host 0.0.0.0 es crucial para que sea accesible desde fuera del contenedor.
-    # --reload es útil para el desarrollo.
-    command: ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+      - ./backend:/app
+    networks:
+      - copiloto-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - copiloto-network
+
+networks:
+  copiloto-network:
+    driver: bridge

@@ -1,0 +1,17 @@
+# --- Web Framework ---
+fastapi
+uvicorn[standard]
+
+# --- LangChain ---
+langchain
+langchain-community
+langchain-core
+
+# --- LLM & Embeddings ---
+llama-cpp-python
+sentence-transformers
+torch
+
+# --- Vector Store & Document Loading ---
+chromadb
+pypdf
