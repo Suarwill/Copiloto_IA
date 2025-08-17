@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from backend.middlewares import add_middleware_cors
-from backend.routes import router_upload, router_chat
+from middlewares import add_middleware_cors
+from routes import router_upload, router_chat
 
 app = FastAPI(
     title="Copiloto Conversacional",
