@@ -1,6 +1,7 @@
 # --- Web Framework ---
 fastapi
 uvicorn[standard]
+python-multipart
 
 # --- LangChain ---
 langchain
