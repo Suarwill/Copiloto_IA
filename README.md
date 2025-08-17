@@ -15,13 +15,20 @@ Proyecto de Copiloto conversacional con IA
 - [✓] Ciberseguridad: Proteccion de datos del usuario y del servidor.
 
 ## Instrucciones para levantar el entorno
-                En desarrollo
-
-## Arquitectura del sistema
-                En desarrollo, se escribirá cuando este funcional
+- Descargar el git
+- Instalar Docker y Docker Compose
+- Levantar los servicios con Docker compose
+- Acceder a la interfaz gráfica por medio de http://localhost:8501
 
 ## Explicacion de flujo conversacional
-                En desarrollo, se escribirá cuando este funcional
+- Usuario carga uno o varios archivos PDF a través de la interfaz de Streamlit (frontend).
+- El frontend envía las solicitudes al backend (FastAPI).
+- El backend procesa estos archivos: extrae texto, lo divide y convierte en vectores mediante LangChain y almacena esos vectores en Chroma.
+- Para responder consultas:
+- Se consulta el vector store (Chroma) para recuperar contenido relevante.
+- Se utiliza el modelo TynyLlama en el contexto definido por LangChain para generar respuestas coherentes.
+- La respuesta se entrega de vuelta al usuario por medio de la interfaz de Streamlit.
+- Todo el sistema se ejecuta dentro de contenedores Docker, definidos y coordinados por el archivo
 
 ## Mejoras futuras
 - Implementación de cuentas de usuario con historial de consultas.
@@ -52,17 +59,3 @@ Además de ser un requerimiento técnico, su inclusión permite:
 - Portabilidad entre entornos de desarrollo y producción.
 - Aislamiento de dependencias.
 - Escalabilidad mediante microservicios.
-
-## Estructura General del proyecto
-Copiloto_IA/
-│
-├── backend/
-│ ├── main.py
-│ ├── routes/
-│ ├── middlewares/
-│ └── ...
-├── frontend/
-│ └── streamlit_app.py
-├── .env
-├── Dockerfile
-└── docker-compose.yml
