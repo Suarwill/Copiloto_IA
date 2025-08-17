@@ -9,6 +9,8 @@ services:
       - "6060:6060"
     volumes:
       - ./backend:/app
+      - ./models:/app/models        
+      - ./data:/app/data             
     networks:
       - copiloto-network
 
